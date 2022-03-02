@@ -3,12 +3,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from apps.users.models import User
-from apps.users.api.serializers import UserSerializer
+from apps.users.api.serializers import UserSerializer, UserListSerializer
 
 @api_view(['GET'])
 def user_get_all_api_view(request): # Returns all users
-    users = User.objects.all() # Brings all objects
-    users_serializer = UserSerializer(users, many = True) # Tranforms model object in json (Serializer task)
+    users = User.objects.all().values('id', 'username', 'email', 'password') # Brings all objects
+    users_serializer = UserListSerializer(users, many = True) # Tranforms model object in json (Serializer task)
     return Response(users_serializer.data, status = status.HTTP_200_OK) # Returns the json response
 
 @api_view(['POST'])

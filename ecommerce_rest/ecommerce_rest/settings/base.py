@@ -37,6 +37,7 @@ LOCAL_APPS = [
 OTHER_APPS = [
     'rest_framework',
     'simple_history',
+    'rest_framework_swagger',
 ]
 
 # Total Apps
