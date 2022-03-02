@@ -30,7 +30,9 @@ BASE_APPS = [
 
 # Local Apps
 LOCAL_APPS = [
+    'apps.base',
     'apps.users',
+    'apps.products',
 ]
 
 # Third-party Apps
