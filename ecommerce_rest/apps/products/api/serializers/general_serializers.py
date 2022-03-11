@@ -5,18 +5,18 @@ class MeasureUnitSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = MeasureUnit
-        exclude = ('state',) # This field is for internal use, it is used only if a logical elimination is done.
+        exclude = ('state','created_date', 'modified_date', 'deleted_date') # These fields are for internal use, they are used only if a logical elimination is done.
 
 
 class ProductCategorySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = ProductCategory
-        exclude = ('state',) # This field is for internal use, it is used only if a logical elimination is done.
+        exclude = ('state','created_date', 'modified_date', 'deleted_date') # These fields are for internal use, they are used only if a logical elimination is done.
 
 
 class IndicatorSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Indicator
-        exclude = ('state',) # This field is for internal use, it is used only if a logical elimination is done.
+        exclude = ('state','created_date', 'modified_date', 'deleted_date') # These fields are for internal use, they are used only if a logical elimination is done.

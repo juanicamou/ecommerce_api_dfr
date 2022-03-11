@@ -1,4 +1,3 @@
-from unicodedata import name
 from django.urls import path
 from apps.users.api.api import user_get_all_api_view, user_create_api_view, user_detail_api_view, user_update_api_view, user_delete_api_view 
 
